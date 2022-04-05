@@ -1,4 +1,4 @@
-module sayici(
+module Counter(
     input clk,rst,
     output wire[4:0] Q
     );
