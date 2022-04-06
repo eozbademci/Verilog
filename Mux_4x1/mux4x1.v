@@ -1,6 +1,6 @@
 
 
-module karsilastirma(
+module mux4x1(
     input wire[1:0] Select, wire[3:0] muxin,
     output muxout
     
