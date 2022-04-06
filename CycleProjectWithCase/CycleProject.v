@@ -1,11 +1,12 @@
-module CycleProject(
+module Cycle(
     input clk,rst,
     output o
+    
     );
     
     reg ox;
-    reg[1:0] durum = 2'b00;
-    reg[4:0] say = 4'b00000;
+    reg[1:0] state = 2'b00;
+    reg[4:0] count = 4'b00000;
     
     assign o=ox;
     
@@ -13,32 +14,32 @@ module CycleProject(
     begin
         if (rst == 1'b1) begin
             ox=1'b0;
-            durum=2'b00;
-            say=4'b00000;
+            state=2'b00;
+            count=4'b00000;
         end
         else begin
-            case(durum)
+            case(state)
             0:begin
-                say=say+1;
-                if (say > 4'h9) begin
-                durum=2'b01;
-                say=4'b00000;
+                count=count+1;
+                if (count > 4'h9) begin
+                state=2'b01;
+                count=4'b00000;
                 end
             end
             
             1:begin
-            say=say+1;
-            if (say > 4'h9) begin
-                durum=2'b10;
-                say=4'h00;
+            count=count+1;
+            if (count > 4'h9) begin
+                state=2'b10;
+                count=4'h00;
             end
             end
             
             2:begin
-            say=say+1;
-                if(say > 5'hf) begin
-                durum = 2'b11;
-                say= 4'h00;
+            count=count+1;
+                if(count > 5'hf) begin
+                state = 2'b11;
+                count= 4'h00;
                 
                 end
             end
