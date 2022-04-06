@@ -3,7 +3,7 @@
 Verilog samples from SUBU ASIC chip design team.
 
 <br/>
-<br/>
+
 
 # Counter Up to 25
 
